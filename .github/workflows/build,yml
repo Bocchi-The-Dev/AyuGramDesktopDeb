@@ -95,7 +95,7 @@ jobs:
           steps.ayugram_info.outputs.stable_tag != 'null' &&
           steps.ayugram_info.outputs.stable_tag != ''
         env:
-          BUILD_TYPE: ${{ github.event.inputs.ug == 'true' && 'ug' || 'Release' }}
+          BUILD_TYPE: ${{ github.event.inputs.debug == 'true' && 'Debug' || 'Release' }}
         run: |
           cd source
           git checkout ${{ steps.ayugram_info.outputs.stable_tag }}
